@@ -1,12 +1,12 @@
 module ActiveRecord
   module Acts
-    module VotedOn
+    module Election
       def self.included(base)
         base.extend(ClassMethods)
       end
       
       module ClassMethods
-        def acts_as_voted_on
+        def acts_as_candidate
           include ActiveRecord::Acts::VotedOn::InstanceMethods
         end
       end

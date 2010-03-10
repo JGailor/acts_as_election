@@ -1,16 +1,16 @@
 sqlite:
   :adapter: sqlite
-  :database: vendor/plugins/acts_as_voted_on/test/acts_as_voted_on_plugin.sqlite.db
+  :database: vendor/plugins/acts_as_election/test/acts_as_election_plugin.sqlite.db
 
 sqlite3:
   :adapter: sqlite3
-  :database: vendor/plugins/acts_as_voted_on/test/acts_as_voted_on_plugin.sqlite3.db
+  :database: vendor/plugins/acts_as_election/test/acts_as_election_plugin.sqlite3.db
 
 postgresql:
   :adapter: postgresql
   :username: postgres
   :password: postgres
-  :database: acts_as_voted_on_plugin_test
+  :database: acts_as_election_plugin_test
   :min_messages: ERROR
 
 mysql:
@@ -18,4 +18,4 @@ mysql:
   :host: localhost
   :username: root
   :password: password
-  :database: acts_as_voted_on_plugin_test
+  :database: acts_as_election_plugin_test
