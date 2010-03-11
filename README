@@ -1,7 +1,13 @@
 ActsAsVotedOn
 =============
 
-Introduction goes here.
+Rails plugin for adding voting capabilities to models in the system.
+
+Installation
+
+============
+
+ruby script/plugin install git@github.com:JGailor/acts_as_election.git
 
 
 Example
