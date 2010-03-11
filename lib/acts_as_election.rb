@@ -1,3 +1,5 @@
+require 'acts_as_election/vote'
+
 module ActiveRecord
   module Acts
     module Election
@@ -7,17 +9,22 @@ module ActiveRecord
       
       module ClassMethods
         def acts_as_candidate
-          include ActiveRecord::Acts::VotedOn::InstanceMethods
+          has_many :votes, :as => :candidate
+          include ActiveRecord::Acts::Election::InstanceMethods
+        end
+        
+        def acts_as_voter
+          has_many :votes, :as => :voter
         end
       end
       
       module InstanceMethods
-        def vote_up
-          puts "I have been voted up!"
+        def vote_for(up_or_down)
+          self.votes << Vote.new(:vote => up_or_down)
         end
       end
     end
   end
 end
 
-ActiveRecord::Base.send(:include, ActiveRecord::Acts::VotedOn)
+ActiveRecord::Base.send(:include, ActiveRecord::Acts::Election)
